@@ -4,9 +4,12 @@ export const AppRouter = () => {
   return (
     <Routes>
 
+        {/* Login y Registro */}
+        <Route />
+
+        {/* JournalApp */}
         <Route/>
 
-        <Route/>
     </Routes>
   )
 }
