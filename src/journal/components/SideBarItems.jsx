@@ -29,9 +29,10 @@ export const SideBarItems = ({title,body,id,date,imageURL = []}) => {
                 <Grid container>
                     <ListItemText primary={newTitle} />
                     <ListItemText secondary={body} />
+                    
                 </Grid>
             </ListItemButton>
-
+            
         </ListItem>
     )
 }

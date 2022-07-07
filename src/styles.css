@@ -33,3 +33,21 @@ img{
 img:hover{
   opacity: 1;
 }
+
+#root > div > nav > div.MuiToolbar-root.MuiToolbar-gutters.MuiToolbar-regular.css-hyum1k-MuiToolbar-root{
+    
+    background: #222254;
+    color: #f3f3f3;
+    opacity: .8;
+    transition: .4s ease-in;
+    -webkit-transition: .4s ease-in;
+    -moz-transition: .4s ease-in;
+    -ms-transition: .4s ease-in;
+    -o-transition: .4s ease-in;
+}
+
+#root > div > nav > div.MuiToolbar-root.MuiToolbar-gutters.MuiToolbar-regular.css-hyum1k-MuiToolbar-root:hover{
+  
+    opacity: 1;
+}
+

@@ -1,12 +1,12 @@
 import { doc,collection,setDoc } from "firebase/firestore/lite";
 import { FirebaseDB } from "../../firebase/config";
-import { loadNotes } from "../../helpers";
-import { addNewEmptyNote,setActiveNote, savingNewNote, setNotes,setSaving,updateNote} from "./";
+import { addNewEmptyNote,setActiveNote} from "./";
+import {savingNewNote, setNotes,setSaving,updateNote,setPhotosToActiveNote} from './journalSlice'
+import { fileUpload, loadNotes } from "../../helpers";
 
 export const startNewNote = () => {
 
     return async(dispatch,getState ) => {
-        
 
         //TODO: Tarea Dispatch
         dispatch(savingNewNote());
@@ -23,17 +23,15 @@ export const startNewNote = () => {
 
         const newDoc = doc( collection(FirebaseDB, `${ uid }/journal/notes`))
 
-        const setDocResp = await setDoc(newDoc, newNote);
+        await setDoc(newDoc, newNote);
 
         newNote.id = newDoc.id;
         // console.log({newDoc,setDocResp})
 
         //! dispatch
-        // dispatch(newNote)
-        // dispatch(activarNote)
+
         dispatch(addNewEmptyNote(newNote));
         dispatch(setActiveNote(newNote));
-        // dispatch(savingNewNote(newNote));
         
     }
 }
@@ -55,6 +53,7 @@ export const startSaveNote = () => {
     return async(dispatch,getState) => {
 
         dispatch(setSaving())
+
         const {uid} = getState().auth;
         const {active:note} = getState().journal;
 
@@ -68,5 +67,24 @@ export const startSaveNote = () => {
 
         dispatch(updateNote(note))
 
+    }
+}
+
+export const startUploadingFiles = ( files = [] ) => {
+    return async(dispatch) => {
+        dispatch( setSaving() );
+
+        const fileUploadPromises = [];
+
+        for(const file of files) {
+            fileUploadPromises.push(fileUpload(file))
+        }
+
+        const photosUrls = await Promise.all(fileUploadPromises);
+
+        //console.log('Photos URLS -> ',photosUrls);
+
+        dispatch(setPhotosToActiveNote(photosUrls) )
+        
     }
 }

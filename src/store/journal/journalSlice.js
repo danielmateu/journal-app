@@ -1,6 +1,4 @@
-import {
-    createSlice
-} from '@reduxjs/toolkit';
+import {createSlice} from '@reduxjs/toolkit';
 
 export const journalSlice = createSlice({
     name: 'journal',
@@ -8,12 +6,12 @@ export const journalSlice = createSlice({
         isSaving: false,
         messageSaved: '',
         notes: [],
-        active: null,
+        active : null,
         // active: {
         //     id:'ABC123',
         //     title: '',
         //     body: '',
-        //     date: 123456,
+        //     date: '',
         //     imageUrls:[], // https://foto1.jpg, https://foto2.jpg, https://foto3.jpg
         // }
     },
@@ -21,7 +19,6 @@ export const journalSlice = createSlice({
 
         savingNewNote: (state) => {
             state.isSaving = true;
-
         },
 
         addNewEmptyNote: (state, action) => {
@@ -29,14 +26,15 @@ export const journalSlice = createSlice({
             state.isSaving = false;
         },
         setActiveNote: (state, action) => {
-            state.active = action.payload
+            state.active = action.payload;
+            state.messageSaved = '';
         },
         setNotes: (state, action) => {
             state.notes = action.payload;
         },
         setSaving: (state, action) => {
             state.isSaving = true;
-            //TODO mensaje de error...
+            state.messageSaved = '';
         },
         updateNote: (state, action) => { //payload: note
             state.isSaving = false;
@@ -48,9 +46,19 @@ export const journalSlice = createSlice({
 
                 return note
             })
+
             //Todo Mostrar mensaje de actualización
+            state.messageSaved = `${action.payload.title}, actualizada correctamente`
+        },
+        setPhotosToActiveNote: (state, action) => {
+            
+            console.log(action.payload);
             
         },
+        clearNotesLogout: (state) => {
+
+        },
+
         deleteNoteById: (state, action) => {
 
         },
@@ -60,11 +68,12 @@ export const journalSlice = createSlice({
 
 // Action creators are generated for each case reducer function
 export const {
-    savingNewNote, //Done
     addNewEmptyNote, //Done
+    deleteNoteById,
+    savingNewNote, //Done
     setActiveNote, //Done
     setNotes, //Done
+    setPhotosToActiveNote,
     setSaving,
     updateNote,
-    deleteNoteById,
 } = journalSlice.actions;

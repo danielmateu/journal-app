@@ -25,7 +25,7 @@ export const SideBar = ({ drawerWidth = 240 }) => {
             </Drawer>
 
             <Toolbar >
-                <Typography variant='h6' nowrap='true' component='div'>{displayName}
+                <Typography variant='h6' nowrap='false' component='div'>{displayName}
                 </Typography>
             </Toolbar>
             <Divider/>
