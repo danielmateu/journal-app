@@ -7,14 +7,26 @@ import {getFirestore} from 'firebase/firestore/lite'
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+//DEV/PROD
+// const firebaseConfig = {
+//     apiKey: "AIzaSyCw3oNORHIWRNNxG_U0OAbT8rawQFD7R8E",
+//     authDomain: "react-cursos-8bd77.firebaseapp.com",
+//     projectId: "react-cursos-8bd77",
+//     storageBucket: "react-cursos-8bd77.appspot.com",
+//     messagingSenderId: "1067189630477",
+//     appId: "1:1067189630477:web:d0e7b4889fe30f85b54744"
+// };
+
+//TESTING 
 const firebaseConfig = {
-    apiKey: "AIzaSyCw3oNORHIWRNNxG_U0OAbT8rawQFD7R8E",
-    authDomain: "react-cursos-8bd77.firebaseapp.com",
-    projectId: "react-cursos-8bd77",
-    storageBucket: "react-cursos-8bd77.appspot.com",
-    messagingSenderId: "1067189630477",
-    appId: "1:1067189630477:web:d0e7b4889fe30f85b54744"
-};
+    apiKey: "AIzaSyComlaT0qj-5HGrdS78kJx7XHQntU_YOng",
+    authDomain: "tracker-267c8.firebaseapp.com",
+    projectId: "tracker-267c8",
+    storageBucket: "tracker-267c8.appspot.com",
+    messagingSenderId: "541330684566",
+    appId: "1:541330684566:web:6c8bc9a219decffffce0b7",
+    measurementId: "G-4MFQQGQZK1"
+  };
 
 // Initialize Firebase
 export const FireBaseApp = initializeApp(firebaseConfig);

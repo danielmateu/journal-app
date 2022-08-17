@@ -1,15 +1,12 @@
 
+import {useDispatch, useSelector} from 'react-redux';
+import { IconButton } from "@mui/material";
+import { AddOutlined } from "@mui/icons-material";
 // import { Typography } from '@mui/material'
 // import {MailOutline} from '@mui/icons-material'
-import { AddOutlined } from "@mui/icons-material";
-import { IconButton } from "@mui/material";
 import { JournalLayout } from "../layout/JournalLayout";
 import { NoteViews, NothingSelectedView } from '../views';
-import {useDispatch, useSelector} from 'react-redux';
 import { startNewNote } from "../../store/journal/thunks";
-import { journalSlice } from "../../store/journal";
-
-
 
 export const JournalPage = () => {
 
@@ -26,17 +23,13 @@ export const JournalPage = () => {
     <JournalLayout>
       
       {
-        (active)
+        (!!active)
         ?
         <NoteViews/>
         :
         <NothingSelectedView />
         
       }
-      
-
-
-      {/*  */}
 
       <IconButton
       disabled = {isSaving}
