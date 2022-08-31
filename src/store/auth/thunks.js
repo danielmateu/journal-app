@@ -46,7 +46,7 @@ export const startCreatingUserWithEmailPassword = ({
 }
 
 
-export const startLoadingWithEmailPassword = ({email,password}) =>{ //startLoginWithEmailPassword
+export const startLogingWithEmailPassword = ({email,password}) =>{ //startLoginWithEmailPassword
 
     return async(dispatch) => { 
         dispatch(chekingCredentials())

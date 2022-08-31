@@ -1,23 +1,21 @@
 export const initialState = {
-    status: 'checking', // 'checking', authenticated
+        status: 'checking', // 'checking', authenticated
         uid: null,
         email: null,
         displayName: null,
         photoURL: null,
         errorMessage: null,
 }
-
 export const authenticatedState = {
-    status: 'authenticated', // 'checking', authenticated
+        status: 'authenticated', // 'checking', authenticated
         uid: '123ABC',
-        email: 'demo@google.com',
+        email: 'demo@gmail.com',
         displayName: 'Demo User',
         photoURL: 'https://demo.jpg',
         errorMessage: null,
 }
-
 export const notAuthenticatedState = {
-    status: 'not-authenticated', // 'checking', authenticated
+        status: 'not-authenticated', // 'checking', authenticated
         uid: null,
         email: null,
         displayName: null,
@@ -26,10 +24,8 @@ export const notAuthenticatedState = {
 }
 
 export const demoUser = {
-    
-        uid: '123ABC',
-        email: 'demo@google.com',
-        displayName: 'DemoUser',
-        photoURL: 'https://demo.jpg',
-        
+        uid: 'ABC123',
+        email: 'demo@gmail.com',
+        displayName: 'Demo User',
+        photoURL: 'https://demo.jpg'
 }

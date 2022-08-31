@@ -17,16 +17,19 @@ import {getFirestore} from 'firebase/firestore/lite'
 //     appId: "1:1067189630477:web:d0e7b4889fe30f85b54744"
 // };
 
-//TESTING 
+
+
+//TESTING
 const firebaseConfig = {
-    apiKey: "AIzaSyComlaT0qj-5HGrdS78kJx7XHQntU_YOng",
-    authDomain: "tracker-267c8.firebaseapp.com",
-    projectId: "tracker-267c8",
-    storageBucket: "tracker-267c8.appspot.com",
-    messagingSenderId: "541330684566",
-    appId: "1:541330684566:web:6c8bc9a219decffffce0b7",
-    measurementId: "G-4MFQQGQZK1"
-  };
+  apiKey: "AIzaSyComlaT0qj-5HGrdS78kJx7XHQntU_YOng",
+  authDomain: "tracker-267c8.firebaseapp.com",
+  projectId: "tracker-267c8",
+  storageBucket: "tracker-267c8.appspot.com",
+  messagingSenderId: "541330684566",
+  appId: "1:541330684566:web:f1a70bc7ce84620afce0b7",
+  measurementId: "G-YRL604NWCG"
+};
+
 
 // Initialize Firebase
 export const FireBaseApp = initializeApp(firebaseConfig);
