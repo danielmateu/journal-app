@@ -42,7 +42,7 @@ export const LoginPage = () => {
   return (
 
     <AuthLayout title="Login">
-
+      {/* <h5>Hola mundo: {import.meta.env.VITE_HOLA}</h5> */}
       <form onSubmit={onSubmit}>
         <Grid
           container

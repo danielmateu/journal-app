@@ -1,6 +1,6 @@
 
 import { checkingAuthentication } from "../../../src/store/auth/thunks"
-import { chekingCredentials, login, logout, startGoogleSignIn, startLogingWithEmailPassword, startLogout } from "../../../src/store/auth"
+import { chekingCredentials, login, logout, startGoogleSignIn, startLoadingWithEmailPassword, startLogout } from "../../../src/store/auth"
 import { demoUser } from "../../fixtures/authFixtures";
 import { loginWithEmailPassword, logoutFirebase, singInWithGoogle } from "../../../src/firebase/providers";
 import { clearNotesLogout } from "../../../src/store/journal/journalSlice";
@@ -61,7 +61,7 @@ describe('PRuebas sobre Auth THUNKS', () => {
 
         await loginWithEmailPassword.mockResolvedValue(loginData);
 
-        await startLogingWithEmailPassword(formData)(dispatch);
+        await startLoadingWithEmailPassword(formData)(dispatch);
 
         expect(dispatch).toHaveBeenCalledWith(chekingCredentials());
         expect(dispatch).toHaveBeenCalledWith(login(loginData));

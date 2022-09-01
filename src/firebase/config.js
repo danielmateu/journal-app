@@ -2,13 +2,22 @@
 import {initializeApp} from "firebase/app";
 import {getAuth} from 'firebase/auth';
 import {getFirestore} from 'firebase/firestore/lite'
-import { getAnalytics } from "firebase/analytics";
+// import { getAnalytics } from "firebase/analytics";
+import { getEnvironments } from "../helpers/getEnviroments";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
+
+// console.log(process.env);
+// console.log(import.meta.env);
+
 // Your web app's Firebase configuration
 // DEV/PROD
+
+// const env = getEnvironments();
+// console.log(env)
+
 const firebaseConfig = {
     apiKey: "AIzaSyCw3oNORHIWRNNxG_U0OAbT8rawQFD7R8E",
     authDomain: "react-cursos-8bd77.firebaseapp.com",
